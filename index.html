@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/reset.min.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery.datetimepicker.css">
+    <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="js/jquery.datetimepicker.js"></script>
+    <script type="text/javascript" src="js/personal_cabinet.js"></script>
+    <script type="text/javascript" src="js/theme.js"></script>
+    <script src="js/main.js"></script>
+</head>
+
+<body>
+
+<script>
+    var json = {};
+    json = {
+        'name':'test_page',
+        'forms':[
+            {
+                'action': 'send_action',
+                'method': 'POST',
+                'rows': [
+                    {
+                        'style':'width:50%',
+                        'content':[
+                            {
+                                'type':'headline',
+                                'title':'Test'
+                            }
+                        ]
+                    },
+                    {
+                        'style':'width:50%',
+                        'content':[
+                            {
+                                'type':'name_input',
+                                'title':'Name'
+                            },
+                            {
+                                'type':'datepicker',
+                                'class':'main_style_input medium',
+                                'format':'d.m.Y'
+                            }
+                        ]
+                    },
+                    {
+                        'style':'width:50%',
+                        'content':[
+                            {
+                                'type':'image_input'
+                            }
+                        ]
+                    },
+                    {
+                        'type':'div',
+                        'content':[
+                            {
+                                'type':'div',
+                                'content':[
+                                    {
+                                        'type':'name_input',
+                                        'name':'login',
+                                        'title':'TestDiv'
+                                    },
+                                    {
+                                        'type':'div',
+                                        'content':[
+                                            {
+                                                'type':'input',
+                                                'action':'test_function',
+                                                'action-event':'click',
+                                                'name':'FIO',
+                                                'placeholder':'Введите ваше ФИО'
+                                            },
+                                            {
+                                                'type':'dropdown',
+                                                'elements':['a','b','c'],
+                                                'style':'width:10%'
+                                            },
+                                            {
+                                                'type':'submit',
+                                                'text':'Сохранить'
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        'style':'width:50%',
+                        'content':[
+                            {
+                                'type':'multiply',
+                                'multiply-name':'multiply-edu',
+                                'new-items-type':'after',
+                                'add':{
+                                    'position':'after',
+                                    'text':'Добавить',
+                                    'style':'margin:10px'
+                                },
+                                'template':{
+                                    'type':'div',
+                                    'style':'margin-bottom:10px',
+                                    'content':[
+                                        {
+                                            'type':'input',
+                                            'name':'education'
+                                        },
+                                        {
+                                            'type':'multiply_delete',
+                                            'text':'X',
+                                            'style':'float:none; width:30px; margin-left:10px'
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    };
+    json_generator_form(json);
+</script>
+
+</body>
+</html>
